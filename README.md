@@ -1,5 +1,7 @@
 ### forky
 A css drawing of Forky from Toy Story 4 creating via TK @ https://redstapler.co/css-drawing-tutorial-for-beginners/.
+
+##WIP
  
 As I moved through this tutorial, I broke each shape and changed its styling to learn how it was made.  The tutorials fork point shapes were not round enough so I deleted them and created my own.
 
