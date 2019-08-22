@@ -1,0 +1,64 @@
+$bg-color: #0080ff;
+$forky-color: #f0f0f0;
+
+.face {
+  background: $forky-color;
+  border-radius: 65% 30% 65% 28%;
+  height: 300px;
+  transform: rotate(-45deg);
+  width: 300px;
+}
+
+.face-mask1 {  
+  background: $bg-color;
+  height: 90px;
+  left: 25px;
+  position: absolute;
+  top: -30px;
+  width: 250px;
+  
+}
+
+.fork1, .fork2 {
+  height: 100px;
+  width: 110px;
+  position: absolute;
+  background-color: $forky-color;
+  border-radius: 90% 10%;
+  transform: rotate(-35deg);
+  top: 40px;
+  left: 8px;
+}
+
+.fork2 {
+  transform: rotate(-70deg);
+  left: 180px;
+}
+
+.fork3, .fork4 {
+  height: 100px;
+  width: 110px;
+  position: absolute;
+  background-color: $forky-color;
+  border-radius: 90% 10%;
+  transform: rotate(-40deg);
+  top: 10px;
+  left: 70px;
+}
+
+.fork4 {
+  transform: rotate(-50deg);
+  left: 140px;
+}
+
+.forky {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+html {
+  background: $bg-color;
+}
+
