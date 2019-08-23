@@ -1,17 +1,24 @@
 $bg-color: #0080ff;
+$brow-color: #d70000;
 $forky-color: #f0f0f0;
-$shadow: #cecece;
+$shadow-color: #cecece;
 $mouth-color: #89d0f0;
 $mouth-shadow-color: #999;
+$second-body-color: #09006f;
 
-.box-shadow {
-  box-shadow: 2px 3px 4px 2px $shadow;
+@mixin shadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+body {
+  margin: 1px;
+  background-image: radial-gradient($bg-color, $second-body-color);
 }
 
 .brow {
   width: 190px;
   height: 81px;
-  border: 20px solid #d70000;
+  border: 20px solid $brow-color;
   border-radius: 32% 43% 39% 42% / 28% 21% 86% 72%;
   position: absolute;
   top: 107px;
@@ -38,12 +45,39 @@ $mouth-shadow-color: #999;
   top: 200px;
 }
 
+.circle {
+  @include shadow(0px, 0px, 14px, 4px, #00008b);
+  background-color: $bg-color;
+  border: 10px solid white;
+  border-radius: 50%;
+  height: 600px;  
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;  
+  width: 600px;  
+}
+
+.circle:before {
+  border: 5px solid $mouth-color;
+  border-radius: 50%;
+  content: " ";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  z-index: -1;
+}
+
 .eye {
+  @include shadow(2px, 2px, 2px, 2px, $shadow-color);
   border-radius: 50%;
   position: absolute;
 }
 
 .eye-left {
+  @include shadow(2px, 2px, 2px, 2px, $shadow-color);
   background-color: #e8e1ef;
   height: 90px;
   left: 62px;
@@ -52,6 +86,7 @@ $mouth-shadow-color: #999;
 }
 
 .eye-right {
+  @include shadow(2px, 2px, 2px, 2px, $shadow-color);
   background-color: #f1f1f1;
   height: 50px;
   left: 162px;
@@ -67,6 +102,13 @@ $mouth-shadow-color: #999;
   width: 290px;
 }
 
+.forky {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .iris {
   background-color: #121212;
   border-radius: 50%;
@@ -74,6 +116,7 @@ $mouth-shadow-color: #999;
 }
 
 .iris-left {
+  @include shadow(2px, 2px, 2px, 2px, $shadow-color);
   width: 60px;
   height: 60px;
   left: 62px;
@@ -144,15 +187,4 @@ $mouth-shadow-color: #999;
   position: absolute;
   top: -30px;
   width: 146px;
-}
-
-.forky {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-html {
-  background: $bg-color;
 }
